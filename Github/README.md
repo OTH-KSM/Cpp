@@ -14,6 +14,7 @@ Error : libc++abi.dylib: terminating with uncaught exception of type std::invali
 
 3: i used reference in cpp00/ex01 and i dont't know its uses i just follow the C perspective
 
+TO : findlastof
 
 ## CPP01
 # ex01 

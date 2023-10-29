@@ -3,17 +3,11 @@ using namespace std;
 
 int main ( void )
 {
-    Zombie *tmp = zombieHorde(8, "Ahmed");
-    Zombie *head = tmp;
+    Zombie *tmp = zombieHorde(25, "Ahmed");
 
-    for (int i = 0; i < 8; i++) {
-        cout << sizeof(tmp + i) << endl;
-        cout << tmp + i << endl;
+    for (int i = 0; i < 25; i++) {
         (tmp + i)->announce();
-        // system("leaks Zombie");
     }
-    // for (int i = 7; i > 0; i++) {
-    //     cout << (*head) + i << "Freed Seccesfully" << endl;
-    //     delete (head + i);
-    // }
+    delete[] tmp;
 }
+//This delete not well understanded
