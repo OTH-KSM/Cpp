@@ -9,4 +9,6 @@ void	_replace(std::string filename, std::string s1, std::string s2);
 void _check_filename_path(std::string filename);
 
 
+//every function
+
 #endif
