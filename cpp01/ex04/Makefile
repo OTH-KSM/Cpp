@@ -1,8 +1,8 @@
-CC = c++
+CC = c++ -fsanitize=address
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
-SRC =  main.cpp 
-OBJ = main.o 
+SRC =  replace.cpp main.cpp
+OBJ = replace.o main.o
 NAME = replace
 
 all : $(NAME)
@@ -14,6 +14,6 @@ clean :
 	$(RM) $(OBJ)
 
 fclean : clean
-	$(RM) $(NAME)
+	$(RM) $(NAME) *.replace
 
 re : fclean all
