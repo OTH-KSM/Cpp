@@ -10,10 +10,11 @@ class Phonebook {
         Contact contact[8];
         Phonebook();
         ~Phonebook();
+        void    DisplayPrompt( void );
+        void    AddNewContact(Phonebook& Phonelist, int *lenght);
+        void    DisplayAndSearch(Phonebook& Phonelist, int lenght);
+        void    DispalyContacts(Phonebook& Phonelist, int lenght);
+        void    SearchContact(Phonebook& Phonelist, int lenght);
 };
-
-void     _AddNewContact(Phonebook& Phonelist, int *lenght);
-void    _DisplayAndSearch(Phonebook& Phonelist, int lenght);
-int     _settings(std::string input);
 
 #endif

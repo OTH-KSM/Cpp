@@ -10,7 +10,7 @@ class Contact
         std::string FirstName;
         std::string LastName;
         std::string Nickname;
-        int PhoneNumber;
+        std::string PhoneNumber;
         std::string DSecret;
         Contact();
         ~Contact();
