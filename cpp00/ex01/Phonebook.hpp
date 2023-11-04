@@ -3,18 +3,20 @@
 
 #include <iostream>
 #include <string>
+#include <iomanip>
 #include "Contact.hpp"
 
 class Phonebook {
-    public:
+    private :
         Contact contact[8];
+    public:
         Phonebook();
         ~Phonebook();
         void    DisplayPrompt( void );
-        void    AddNewContact(Phonebook& Phonelist, int *lenght);
-        void    DisplayAndSearch(Phonebook& Phonelist, int lenght);
-        void    DispalyContacts(Phonebook& Phonelist, int lenght);
-        void    SearchContact(Phonebook& Phonelist, int lenght);
+        void    AddNewContact(int *lenght);
+        void    DisplayAndSearch(int lenght);
 };
+
+void	_checkEOF( void );
 
 #endif

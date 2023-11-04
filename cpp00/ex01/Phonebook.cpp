@@ -10,6 +10,7 @@ Phonebook::~Phonebook() {
 }
 
 void    Phonebook::DisplayPrompt( void )    {
+
     std::cout << "*************************************************************" << std::endl;
 	std::cout << "**                 Here Is My Awesome PhoneBook 📖         **" << std::endl;
 	std::cout << "**                                                         **" << std::endl;
@@ -21,79 +22,47 @@ void    Phonebook::DisplayPrompt( void )    {
 	std::cout << "*************************************************************" << std::endl << std::endl;
 }
 
-void    Phonebook::AddNewContact(Phonebook& Phonelist, int *lenght) {
+void    Phonebook::AddNewContact(int *lenght) {
     static int index;
 
-    Contact mate;
-
-    std::cout << "First name : ";
-    std::cin >> mate.FirstName;
-    std::cout << "Last name : ";
-    std::cin >> mate.LastName;
-    std::cout << "Nickname : ";
-    std::cin >> mate.Nickname;
-    std::cout << "Phone number : ";
-    std::cin >> mate.PhoneNumber;
-    std::cout << "darkest secret : ";
-    std::cin >> mate.DSecret;
     if (index == 8)
         index = 0;
-    Phonelist.contact[index] = mate;
+    this->contact[index].add();
     index++;
     (*lenght)++;
     if (*lenght > 8)
         *lenght = 8;
-    std::cout << *lenght << std::endl;
-    
 }
 
-void    Phonebook::DisplayAndSearch(Phonebook& Phonelist, int lenght)   {
+void    Phonebook::DisplayAndSearch(int lenght)   
+{
+    // if No Contact saved no need to print something
+
+    if (lenght == 0)    {
+        std::cout << "No Contact has been added" << std::endl;
+        return ;
+    }
+
+    // Displaying all the saved Contacts
+
     std::cout << "  Index   | FrstName | LastName | Nickname " << std::endl;
     std::cout << "----------|----------|----------|----------" << std::endl;
-    DispalyContacts(Phonelist, lenght);
-    SearchContact(Phonelist, lenght);
-}
-
-void    Phonebook::DispalyContacts(Phonebook& Phonelist, int lenght)    {
-    std::string indexStr;
-    std::string firstName;
-    std::string lastName;
-    std::string nickname;
-
     for (int i = 0; i < lenght; i++) {
-        indexStr = std::to_string(i + 1);
-        firstName = Phonelist.contact[i].FirstName;
-        lastName = Phonelist.contact[i].LastName;
-        nickname = Phonelist.contact[i].Nickname;
-
-        if (indexStr.size() > 10) indexStr = indexStr.substr(0, 9) + ".";
-        if (firstName.size() > 10) firstName = firstName.substr(0, 9) + ".";
-        if (lastName.size() > 10) lastName = lastName.substr(0, 9) + ".";
-        if (nickname.size() > 10) nickname = nickname.substr(0, 9) + ".";
-        
-
-        indexStr.insert(0, 10 - indexStr.length(), ' ');
-        firstName.insert(0, 10 - firstName.length(), ' ');
-        lastName.insert(0, 10 - lastName.length(), ' ');
-        nickname.insert(0, 10 - nickname.length(), ' ');
-        std::cout << indexStr << "|" << firstName << "|" << lastName << "|" << nickname << std::endl;
+        this->contact[i].view(i, lenght);
     }
-}
 
-void    Phonebook::SearchContact(Phonebook& Phonelist, int lenght)  {
+    // Asking the user which user he want to see all its infomrations
+
     while (1)
     {
         std::string InputNumber;
         std::cout << "Which Contact Do You Want To See ? : ";
         std::cin >> InputNumber;
+        _checkEOF();
         if (InputNumber.length() == 1 && (InputNumber[0] >= '1' && InputNumber[0] <= std::to_string(lenght)[0]))
         {
             int index = stoi(InputNumber);
-            std::cout << "First Name : " << Phonelist.contact[index - 1].FirstName << std::endl;
-            std::cout << "Last Name  : " << Phonelist.contact[index - 1].LastName << std::endl;
-            std::cout << "Nickname   : " << Phonelist.contact[index - 1].Nickname << std::endl;
-            std::cout << "PhoneName  : " << Phonelist.contact[index - 1].PhoneNumber << std::endl;
-            std::cout << "DarSecret  : " << Phonelist.contact[index - 1].DSecret << std::endl;
+            this->contact[index - 1].search();
             return ;
         }
         else if (InputNumber.length() == 1 && (InputNumber[0] <= '1' && InputNumber[0] >= std::to_string(lenght)[0])) {

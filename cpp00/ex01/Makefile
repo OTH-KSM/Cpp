@@ -1,4 +1,4 @@
-CC = c++ -fsanitize=address
+CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 SRC = Contact.cpp Phonebook.cpp main.cpp
