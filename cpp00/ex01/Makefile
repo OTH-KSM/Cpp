@@ -1,4 +1,4 @@
-CC = c++
+CXX = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 SRC = Contact.cpp Phonebook.cpp main.cpp
@@ -8,7 +8,7 @@ NAME = Phonebook
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CXX) $(CFLAGS) $(OBJ) -o $(NAME)
 
 clean :
 	$(RM) $(OBJ)
