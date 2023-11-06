@@ -1,3 +1,9 @@
+<details open>
+<summary> Summary </summary>
+* Intodution To OOP [~1]
+* 
+
+
 # Introduction To OOP:
 
 The C++ cames with a very dynamic consept which is The Object Orionted Programming is a smallest definition
@@ -52,10 +58,32 @@ Class helps us to assemble :
 - with different data types
 - and group them with functions
 
+like this :
+```
+class Car {
+    Public :
+        char color[];
+        int MasSpeed;
+        char name[];
+        void    ft_announce(); // to announe itself
+}
+```
+
+> [!Note]
+> We can Declare A function inside a struct in cpp with the new consept but it still a Difference between A struct and A class in cpp keep in mind that i used Public inside this class exemple And it has its importance we will check it after in section [^1]
+
 and from that class we can create an instance of that class that act like a family and from that family we have objects that represent members of this family each one of them has its caracteristics and cames from this family.
 
-And This is The answer of what is an Object 
+### And This is The answer of what is an Object
 
+
+## Encapsulation
+
+## Abstraction
+
+## Polymorphism
+
+## Inheritance
 
 
 

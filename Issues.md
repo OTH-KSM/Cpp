@@ -41,3 +41,10 @@ The use of new for dynamic allocation is critical, placing the object on the hea
 The key takeaway is to assess the intended scope and duration of an object's existence. For objects requiring extended access across functions,  heap allocation using new and the use of pointers can provide the necessary flexibility.On the other hand, for short-lived objects limited to a specific function's scope, stack allocation suffices, avoiding potential issues related to dangling pointers.
 
 Enhancing these aspects will provide a more comprehensive understanding of memory allocation, object scope, and the importance of proper memory management in C++.
+
+## Virtual functions;
+https://www.learncpp.com/cpp-tutorial/the-virtual-table/
+https://stackoverflow.com/questions/2391679/why-do-we-need-virtual-functions-in-c
+
+
+## Polymorphism : AD-HOD OR Parametric
